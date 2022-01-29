@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { Fragment, React } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import CountriesList from './components/CountriesList';
+import CountryDetails from './components/CountryDetails';
+//import data from './countries.json';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Fragment>
+        <Navbar /> 
+        <div className="container">
+          <div className="row">
+            <Switch>
+              <Route exact path="/">
+                <CountriesList/>
+              </Route>
+              <Route path="/countries/:code">
+                <CountryDetails/>
+              </Route>
+            </Switch>
+            </div>
+        </div>
+      </Fragment>
+    </Router>
   );
 }
 

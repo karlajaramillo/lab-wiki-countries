@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.country-info {
+  max-height:  70vh;
+  text-align:  center;
+  overflow: scroll;
+}
+
+.capital {
+  width: 30%;
+}
+
+
+.country-info-wrapper {
+  display: flex;
+}
